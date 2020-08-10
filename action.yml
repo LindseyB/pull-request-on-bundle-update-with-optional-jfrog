@@ -19,6 +19,15 @@ inputs:
   bundler_version:
     description: set bundler version
     required: false
+  jfrog_path:
+    description: the host for jfrog
+    required: false
+  jfrog_username:
+    description: the username to use for jfrog
+    required: false
+  jfrog_api_token:
+    description: the API token to use for jfrog
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
