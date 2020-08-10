@@ -38,10 +38,8 @@ if [[ -n "$INPUT_JFROG_PATH" ]]; then
   echo "=============================" 
   echo "setting up jfrog config"
   echo $INPUT_JFROG_USERNAME
-  gem update system
-  echo "supersitious"
   bundle config set --global $INPUT_JFROG_PATH $INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN
-  bundle config get --global $INPUT_JFROG_PATH
+  bundle config get $INPUT_JFROG_PATH
   echo "============================="
 fi
 
