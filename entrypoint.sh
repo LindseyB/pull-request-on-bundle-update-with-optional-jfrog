@@ -33,6 +33,12 @@ fi
 gem install bundler-diff
 
 bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib"
+
+if [[ -n "$JFROG_PATH" ]]; then
+  bundle config set $JFROG_PATH $JFROG_USERNAME:$JFROG_API_TOKEN
+fi
+
+
 bundle update
 bundle diff -f md_table
 BUNDLE_DIFF="$(bundle diff -f md_table)"
