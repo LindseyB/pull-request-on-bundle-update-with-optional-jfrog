@@ -35,15 +35,7 @@ gem install bundler-diff
 bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib"
 
 if [[ -n "$INPUT_JFROG_PATH" ]]; then
-  echo "=============================" 
-  echo "setting up jfrog config"
-  echo $INPUT_JFROG_USERNAME
-  # TODO: update to use path and domain 
-  gem source -a https://$INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN@stitchfix01.jfrog.io/stitchfix01/api/gems/eng-gems/
   bundle config set --global $INPUT_JFROG_PATH $INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN
-  bundle config get $INPUT_JFROG_PATH
-  cat ~/.bundle/config
-  echo "============================="
 fi
 
 
