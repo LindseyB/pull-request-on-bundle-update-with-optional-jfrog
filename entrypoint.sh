@@ -35,9 +35,11 @@ gem install bundler-diff
 bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib"
 
 if [[ -n "$INPUT_JFROG_PATH" ]]; then
+  echo "=============================" 
   echo "setting up jfrog config"
   echo $INPUT_JFROG_USERNAME
   bundle config set $INPUT_JFROG_PATH $INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN
+  echo "============================="
 fi
 
 
