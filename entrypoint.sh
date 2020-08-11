@@ -56,10 +56,10 @@ git config --global user.name $GIT_USER_NAME
 git config --global user.email $GIT_EMAIL
 
 hub add Gemfile Gemfile.lock
-hub commit -m "bundle update && bundle update --ruby"
+hub commit -m "bundle update && bundle update --ruby ✨"
 hub push origin ${BRANCH_NAME}
 
-TITLE="bundle update $(date "+%Y%m%d_%H%M%S")"
+TITLE="Automatically Generated Bundle Update $(date "+%Y%m%d_%H%M%S") 🤖"
 
 PR_ARG="-m \"$TITLE\" -m \"$BUNDLE_DIFF\""
 
