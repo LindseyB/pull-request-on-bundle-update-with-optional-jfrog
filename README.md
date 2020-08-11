@@ -39,7 +39,7 @@ jobs:
 ![DEMO](./images/demo.jpg)
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [pull-request-on-bundle-update](https://github.com/LindseyB/pull-request-on-bundle-update-with-optional-jfrog).
+Bug reports and pull requests are welcome on GitHub at [pull-request-on-bundle-update-with-optional-jfrog](https://github.com/LindseyB/pull-request-on-bundle-update-with-optional-jfrog).
 
 ## License
 The plugin is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
