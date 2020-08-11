@@ -35,11 +35,8 @@ gem install bundler-diff
 bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib"
 
 if [[ -n "$INPUT_JFROG_PATH" ]]; then
-  echo "=== setting up artifactory access ===="
-  gem update --system 3.1.1
+  gem update --system 3.1.1 > /dev/null
   bundle config set --global $INPUT_JFROG_PATH $INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN
-  cat ~/.bundle/config
-  echo "=== idk my bff jill ==="
 fi
 
 
