@@ -30,13 +30,16 @@ jobs:
           git_email: test@example.com
           reviewers: supermanner,hoge,fuga // optional
           bundler_version: 2.0.1 // optional
+          jfrog_path: example.jfrog.io // optional
+          jfrog_username: example%40example.com // optional
+          jfrog_api_token: ${{ secrets.JFROG_API_TOKEN }} // optional
 ```
 
 ## Demo
 ![DEMO](./images/demo.jpg)
 
 ## Contributing
-Bug reports and pull requests are welcome on GitHub at [pull-request-on-bundle-update](https://github.com/supermanner/pull-request-on-bundle-update).
+Bug reports and pull requests are welcome on GitHub at [pull-request-on-bundle-update](https://github.com/LindseyB/pull-request-on-bundle-update-with-optional-jfrog).
 
 ## License
 The plugin is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
