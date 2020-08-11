@@ -1,8 +1,7 @@
 # Pull request on bundle update
-This Github Action is that send pull request on bundle update.  
-To draw bundle update diff table, I'd like use [bundler-diff](https://github.com/sinsoku/bundler-diff), Thank you.
+This Github Action is that send pull request on bundle update and then uses [bundler-diff](https://github.com/sinsoku/bundler-diff) to display a table for the updated gems. Addtionally, if you are using artifactory for accessing and hosting private gems you can provide some jfrog information in order to ensure those can be accessed. 
 
-This Github Action is running on **[ruby2.6-alipne](https://github.com/docker-library/ruby/blob/5c9e21cbf79b7f36d505555c9ecd62cf0f7e07f8/2.6/alpine3.10/Dockerfile)**.
+This Github Action is running on **ruby2.7-alpine**.
 
 ## Usage
 ※ Without Gemfile and Gemfile.lock, this workflow is failure. 
