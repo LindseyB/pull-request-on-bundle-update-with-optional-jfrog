@@ -35,9 +35,6 @@ gem install bundler-diff
 bundle config --local build.mysql2 "--with-ldflags=-L/usr/local/opt/openssl/lib"
 bundle config --local build.nokogiri "--with-xml2-dir=/usr --with-xslt-dir=/opt/local --with-iconv-dir=/opt/local"
 
-sudo apt-get -y install libpq-dev
-sudo apt-get -y install postgresql
-
 if [[ -n "$INPUT_JFROG_PATH" ]]; then
   gem update --system 3.1.1 > /dev/null
   bundle config set --global $INPUT_JFROG_PATH $INPUT_JFROG_USERNAME:$INPUT_JFROG_API_TOKEN
