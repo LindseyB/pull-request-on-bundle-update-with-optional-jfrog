@@ -14,8 +14,9 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   g++ \
   python3-dev \
   imagemagick6-dev \
-  mariadb-dev
-
+  mariadb-dev \
+  libpq-dev
+  
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
