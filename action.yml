@@ -28,6 +28,9 @@ inputs:
   jfrog_api_token:
     description: the API token to use for jfrog
     required: false
+  yarn_upgrade:
+    description: if a yarn upgrade should be performed (if set to any value this is true otherwise false)
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
