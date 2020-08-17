@@ -16,7 +16,8 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   imagemagick6-dev \
   mariadb-dev \
   postgresql-dev
-  
+
+RUN npm i -g --force yarn
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
