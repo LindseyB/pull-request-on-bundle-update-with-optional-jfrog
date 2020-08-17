@@ -50,6 +50,12 @@ if [ "$(git diff --name-only origin/master --diff-filter=d | wc -w)" == 0 ]; the
   exit 1
 fi
 
+
+if [[ -n "$INPUT_YARN_UPGRADE" ]]; then
+  yarn
+  yarn upgrade
+fi
+
 export GITHUB_USER="$GITHUB_ACTOR"
 
 git config --global user.name $GIT_USER_NAME
