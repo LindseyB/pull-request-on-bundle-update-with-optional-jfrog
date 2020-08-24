@@ -17,7 +17,9 @@ RUN echo http://dl-cdn.alpinelinux.org/alpine/edge/testing >> /etc/apk/repositor
   mariadb-dev \
   postgresql-dev
 
-RUN npm i -g --force yarn
+RUN apk add yarn && \
+  echo $(yarn --version)
+
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
