@@ -49,6 +49,7 @@ fi
 
 
 if [[ -n "$INPUT_YARN_UPGRADE" ]]; then
+  export NPM_TOKEN=$INPUT_NPM_TOKEN
   yarn
   yarn upgrade
 fi
