@@ -22,7 +22,7 @@ jobs:
         with:
           fetch-depth: 1
       - name: pull request on bundle update
-        uses: LindseyB/pull-request-on-bundle-update-with-optional-jfrog@v1.1
+        uses: LindseyB/pull-request-on-bundle-update-with-optional-jfrog@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           git_user_name: example_name
@@ -32,6 +32,8 @@ jobs:
           jfrog_path: example.jfrog.io // optional
           jfrog_username: example%40example.com // optional
           jfrog_api_token: ${{ secrets.JFROG_API_TOKEN }} // optional
+          yarn_upgrade: true // optional
+          npm_token: ${{ secrets.NPM_TOKEN }} // optional
 ```
 
 ## Demo
