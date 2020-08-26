@@ -31,6 +31,9 @@ inputs:
   yarn_upgrade:
     description: if a yarn upgrade should be performed (if set to any value this is true otherwise false)
     required: false
+  npm_token:
+    description: required if and only if you are doing the yarn upgrade and have private packages
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
