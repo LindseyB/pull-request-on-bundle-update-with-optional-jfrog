@@ -47,20 +47,21 @@ if [ "$(git diff --name-only origin/master --diff-filter=d | wc -w)" == 0 ]; the
   exit 1
 fi
 
-
-if [[ -n "$INPUT_YARN_UPGRADE" ]]; then
-  export NPM_TOKEN=$INPUT_NPM_TOKEN
-  yarn
-  yarn upgrade
-fi
-
 export GITHUB_USER="$GITHUB_ACTOR"
 
 git config --global user.name $GIT_USER_NAME
 git config --global user.email $GIT_EMAIL
 
+
+if [[ -n "$INPUT_YARN_UPGRADE" ]]; then
+  export NPM_TOKEN=$INPUT_NPM_TOKEN
+  yarn
+  yarn upgrade
+  hub add yarn.lock
+fi
+
 hub add Gemfile Gemfile.lock
-hub commit -m "bundle update && bundle update --ruby ✨"
+hub commit -m "dependency updates ✨"
 hub push origin ${BRANCH_NAME}
 
 TITLE="Automatically Generated Bundle Update $(date "+%Y%m%d_%H%M%S") 🤖"
