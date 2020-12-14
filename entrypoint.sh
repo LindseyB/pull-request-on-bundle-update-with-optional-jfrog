@@ -43,7 +43,7 @@ bundle lock --update
 bundle diff -f md_table
 BUNDLE_DIFF="$(bundle diff -f md_table)"
 
-if [ "$(git diff --name-only origin/master --diff-filter=d | wc -w)" == 0 ]; then
+if [ "$(git diff --name-only origin/$DEFAULT_BRANCH --diff-filter=d | wc -w)" == 0 ]; then
   echo "not update"
   exit 1
 fi
@@ -73,7 +73,7 @@ if [[ -n "$INPUT_REVIEWERS" ]]; then
   PR_ARG="$PR_ARG -r \"$INPUT_REVIEWERS\""
 fi
 
-COMMAND="hub pull-request -b master -h $BRANCH_NAME --no-edit $PR_ARG || true"
+COMMAND="hub pull-request -b $DEFAULT_BRANCH -h $BRANCH_NAME --no-edit $PR_ARG || true"
 
 echo "$COMMAND"
 sh -c "$COMMAND"
