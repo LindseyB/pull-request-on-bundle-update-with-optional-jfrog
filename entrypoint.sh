@@ -43,11 +43,6 @@ bundle lock --update
 bundle diff -f md_table
 BUNDLE_DIFF="$(bundle diff -f md_table)"
 
-if [ "$(git diff --name-only origin/$DEFAULT_BRANCH --diff-filter=d | wc -w)" == 0 ]; then
-  echo "not update"
-  exit 1
-fi
-
 export GITHUB_USER="$GITHUB_ACTOR"
 
 git config --global user.name $GIT_USER_NAME
