@@ -18,7 +18,7 @@ if [[ -z "$GIT_EMAIL" ]]; then
 fi
 
 git remote set-url origin "https://$GITHUB_ACTOR:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY"
-DEFAULT_BRANCH=git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //'
+DEFAULT_BRANCH=$(git remote show $REMOTE | grep "HEAD branch" | sed 's/.*: //')
 git checkout ${DEFAULT_BRANCH}
 BRANCH_NAME="bundle_update/$(date "+%Y%m%d_%H%M%S")"
 git checkout -b ${BRANCH_NAME}
